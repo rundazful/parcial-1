@@ -32,6 +32,38 @@ bot.onText(/\/mayor/, (msg) => {
 bot.sendMessage(msg.chat.id, "es mayor");
 
 });
+//Numero de telefono
+
+bot.onText(/\/telefono/, (msg) => {
+
+bot.sendMessage(msg.chat.id, "2018-2018");
+
+});
+
+//Me quieres?
+
+bot.onText(/\/mequieres/, (msg) => {
+
+bot.sendMessage(msg.chat.id, "Me quiere?", {
+"reply_markup": {
+    "keyboard": [["Te Quiero", "No Te Quiero"]]
+    }
+});
+
+});
+
+// Respuesta a te quiero o no te quiero
+
+bot.on('message', (msg) => {
+var tequiero = "Te Quiero";
+if (msg.text.indexOf(tequiero) === 0) {
+    bot.sendMessage(msg.chat.id, "Aww que lindis");
+}
+var notequiero = "No Te Quiero";
+if (msg.text.indexOf(notequiero) === 0) {
+    bot.sendMessage(msg.chat.id, "Ushh que pesado");
+}
+});
 
 //Enviar Meme
 
