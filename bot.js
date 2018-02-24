@@ -7,6 +7,17 @@ const token = '540566105:AAHl5LaX1fdGqlN44WsNjNb9dK6AAC8RT1A';
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, {polling: true});
 
+// Responder todas la preguntas
+
+bot.on('message', (msg) => {
+
+var pregunta = "?";
+if (msg.text.toString().toLowerCase().includes(pregunta)) {
+    bot.sendMessage(msg.chat.id, "Muy Pronto Lanzamiento Bot");
+}
+
+});
+
 //direccion comando
 
 bot.onText(/\/direccion/, (msg) => {
@@ -46,7 +57,7 @@ bot.sendMessage(msg.chat.id, "2018-2018");
 
 bot.onText(/\/hola/, (msg) => {
 
-bot.sendMessage(msg.chat.id, "Hola @" + msg.from.username); 
+bot.sendMessage(msg.chat.id, "Hola @" + msg.from.username);
 });
 
 //Me quieres?
