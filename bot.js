@@ -27,10 +27,13 @@ bot.sendMessage(msg.chat.id,"No te conosco");
 
 //Mayor que numeros
 
-bot.onText(/\/mayor/, (msg) => {
-
-bot.sendMessage(msg.chat.id, "es mayor");
-
+bot.onText(/\/mayor (.+)/, function Mayor(msg) {
+  if (val1 > val2) {
+  bot.sendMessage(msg.chat.id, "Mayor: " + val1);
+  }
+  else {
+  bot.sendMessage(msg.chat.id, "Mayor: " + val2);
+  }
 });
 //Numero de telefono
 
@@ -38,6 +41,12 @@ bot.onText(/\/telefono/, (msg) => {
 
 bot.sendMessage(msg.chat.id, "2018-2018");
 
+});
+// Hola usuario
+
+bot.onText(/\/hola/, (msg) => {
+
+bot.sendMessage(msg.chat.id, "Hola @" + msg.from.username); 
 });
 
 //Me quieres?
